@@ -1,9 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://xum6wyd7p7pt"]
+[gd_scene load_steps=26 format=3 uid="uid://xum6wyd7p7pt"]
 
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_7xv3e"]
 [ext_resource type="Texture2D" uid="uid://bn4k86c1vomt8" path="res://Art/Penguin/PenguinWalking.png" id="1_uymub"]
 [ext_resource type="Texture2D" uid="uid://cikq0vyscx4q4" path="res://Art/Penguin/CarryGreenPresent.png" id="2_tt0hm"]
 [ext_resource type="Texture2D" uid="uid://70gi465c1yl4" path="res://Art/Penguin/CarryRedPresent.png" id="3_cdqqt"]
 [ext_resource type="Texture2D" uid="uid://0mfywqkoxi6b" path="res://Art/Penguin/CarryYellowPresent.png" id="4_3f0tg"]
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="6_ewli6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auhsa"]
 atlas = ExtResource("1_uymub")
@@ -147,6 +149,7 @@ animations = [{
 size = Vector2(10, 14)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_7xv3e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0sk7v")
@@ -163,3 +166,7 @@ frame_progress = 0.286001
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_dc6xf")
+
+[node name="PlayerMovement" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_ewli6")
