@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgbk8yfcbbwc0"]
 
-[ext_resource type="Script" path="res://Scripts/red_present.gd" id="1_bjo32"]
+[ext_resource type="Script" path="res://Scripts/present.gd" id="1_qjyir"]
 [ext_resource type="Texture2D" uid="uid://ipcmvijd7288" path="res://Art/Present/YellowPresent.png" id="2_px8xp"]
 [ext_resource type="Script" path="res://Scripts/PresentMovement.gd" id="3_e20x2"]
 
@@ -8,7 +8,7 @@
 size = Vector2(20, 19)
 
 [node name="YellowPresent" type="Area2D"]
-script = ExtResource("1_bjo32")
+script = ExtResource("1_qjyir")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_px8xp")
