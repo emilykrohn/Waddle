@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=8 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
 [ext_resource type="Texture2D" uid="uid://fwhgkqwnd0t2" path="res://Art/Background/Snow.png" id="2_ldagl"]
 [ext_resource type="PackedScene" uid="uid://xum6wyd7p7pt" path="res://Scenes/player.tscn" id="3_60fi8"]
+[ext_resource type="PackedScene" uid="uid://bjlvxxxqbb7c4" path="res://Scenes/red_present.tscn" id="4_7uexl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -66,3 +67,6 @@ zoom = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("3_60fi8")]
 position = Vector2(150, 173)
+
+[node name="RedPresent" parent="." instance=ExtResource("4_7uexl")]
+position = Vector2(193, 78)
