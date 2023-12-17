@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjlvxxxqbb7c4"]
+
+[ext_resource type="Texture2D" uid="uid://ck7co1xgon268" path="res://Art/Present/RedPresent.png" id="1_4cs5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rghea"]
+size = Vector2(20, 19)
+
+[node name="RedPresent" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4cs5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rghea")
