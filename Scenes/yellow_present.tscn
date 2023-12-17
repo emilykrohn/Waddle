@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rghea"]
 size = Vector2(20, 19)
 
-[node name="GreenPresent" type="Area2D"]
+[node name="YellowPresent" type="Area2D"]
 script = ExtResource("1_bjo32")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,3 +20,7 @@ shape = SubResource("RectangleShape2D_rghea")
 [node name="PresentMovement" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_e20x2")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
