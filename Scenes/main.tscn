@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=7 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
 [ext_resource type="Texture2D" uid="uid://fwhgkqwnd0t2" path="res://Art/Background/Snow.png" id="2_ldagl"]
+[ext_resource type="PackedScene" uid="uid://xum6wyd7p7pt" path="res://Scenes/player.tscn" id="3_60fi8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -33,3 +34,6 @@ layer_0/tile_data = PackedInt32Array(655361, 65538, 1, 720897, 65538, 1, 786433,
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(193, 132)
 zoom = Vector2(3, 3)
+
+[node name="Player" parent="." instance=ExtResource("3_60fi8")]
+position = Vector2(150, 173)
