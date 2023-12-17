@@ -1,6 +1,6 @@
 extends Area2D
 
-const COLOR = "Green"
+const COLOR = "Yellow"
 
 func _process(delta):
 	$%PresentMovement.movement(1)

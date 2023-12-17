@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=10 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
 [ext_resource type="Texture2D" uid="uid://fwhgkqwnd0t2" path="res://Art/Background/Snow.png" id="2_ldagl"]
 [ext_resource type="PackedScene" uid="uid://xum6wyd7p7pt" path="res://Scenes/player.tscn" id="3_60fi8"]
 [ext_resource type="PackedScene" uid="uid://bjlvxxxqbb7c4" path="res://Scenes/red_present.tscn" id="4_7uexl"]
 [ext_resource type="PackedScene" uid="uid://cs58ksdt5vaf5" path="res://Scenes/green_present.tscn" id="5_gh672"]
+[ext_resource type="PackedScene" uid="uid://dgbk8yfcbbwc0" path="res://Scenes/yellow_present.tscn" id="6_34fyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -74,3 +75,6 @@ position = Vector2(193, 78)
 
 [node name="GreenPresent" parent="." instance=ExtResource("5_gh672")]
 position = Vector2(104, 49)
+
+[node name="GreenPresent2" parent="." instance=ExtResource("6_34fyg")]
+position = Vector2(303, 42)
