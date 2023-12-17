@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://xum6wyd7p7pt"]
+[gd_scene load_steps=28 format=3 uid="uid://xum6wyd7p7pt"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_7xv3e"]
 [ext_resource type="Texture2D" uid="uid://bn4k86c1vomt8" path="res://Art/Penguin/PenguinWalking.png" id="1_uymub"]
@@ -149,6 +149,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dc6xf"]
 size = Vector2(10, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r80li"]
+size = Vector2(20, 19)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_7xv3e")
 
@@ -179,3 +182,5 @@ script = ExtResource("7_gpbcx")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_r80li")
