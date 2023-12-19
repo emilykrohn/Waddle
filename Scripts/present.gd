@@ -2,7 +2,7 @@ extends Area2D
 
 const COLOR = "Yellow"
 
-func _process(delta):
+func _process(_delta):
 	$%PresentMovement.movement(1)
 
 
