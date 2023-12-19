@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjlvxxxqbb7c4"]
+
+[ext_resource type="Texture2D" uid="uid://ck7co1xgon268" path="res://Art/Present/RedPresent.png" id="1_4cs5y"]
+[ext_resource type="Script" path="res://Scripts/present.gd" id="1_hj8yt"]
+[ext_resource type="Script" path="res://Scripts/PresentMovement.gd" id="3_01hxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rghea"]
+size = Vector2(20, 19)
+
+[node name="RedPresent" type="Area2D"]
+script = ExtResource("1_hj8yt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4cs5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_rghea")
+
+[node name="PresentMovement" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_01hxc")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

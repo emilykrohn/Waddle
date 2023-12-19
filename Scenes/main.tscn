@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=9 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
 [ext_resource type="Texture2D" uid="uid://fwhgkqwnd0t2" path="res://Art/Background/Snow.png" id="2_ldagl"]
 [ext_resource type="PackedScene" uid="uid://xum6wyd7p7pt" path="res://Scenes/player.tscn" id="3_60fi8"]
+[ext_resource type="Script" path="res://Scripts/PresentSpawnArea.gd" id="4_o324a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -53,6 +54,12 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i55v1")
 sources/2 = SubResource("TileSetAtlasSource_aoqt3")
 
+[sub_resource type="Curve2D" id="Curve2D_akuln"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 383, -12)
+}
+point_count = 2
+
 [node name="main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -66,3 +73,12 @@ zoom = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("3_60fi8")]
 position = Vector2(150, 173)
+
+[node name="PresentSpawnArea" type="Path2D" parent="."]
+curve = SubResource("Curve2D_akuln")
+script = ExtResource("4_o324a")
+
+[node name="Timer" type="Timer" parent="PresentSpawnArea"]
+autostart = true
+
+[connection signal="timeout" from="PresentSpawnArea/Timer" to="PresentSpawnArea" method="_on_timer_timeout"]
