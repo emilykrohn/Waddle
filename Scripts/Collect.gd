@@ -3,12 +3,20 @@ extends Node
 var color
 var collected := false
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_area_entered(area):
 	if not collected:
-		if body.name == "yellow_present":
+		if area.name == "YellowPresent":
 			color = "yellow"
-		elif body.name == "red_present":
+			area.queue_free()
+			print("yellow")
+			collected = true
+		elif area.name == "RedPresent":
 			color = "red"
-		elif body.name == "green_present":
+			area.queue_free()
+			print("red")
+			collected = true
+		elif area.name == "GreenPresent":
 			color = "green"
-		collected = true
+			area.queue_free()
+			print("green")
+			collected = true
