@@ -3,6 +3,7 @@ extends Node
 @onready var walking = $"../AnimatedSprite2D"
 @onready var carrying = $"../AnimatedSprite2D2"
 var is_carrying := false
+var present_color
 
 func play():
 	if not $%Collect.collected:
@@ -12,7 +13,8 @@ func play():
 	else:
 		carrying.visible = true
 		walking.visible = true
-		carrying.play("Carry" + $%Collect.color)
+		present_color = $%Collect.color
+		carrying.play("Carry" + present_color)
 
 func stop():
 	walking.stop()
