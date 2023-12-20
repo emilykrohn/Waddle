@@ -10,7 +10,7 @@ size = Vector2(16, 16)
 size = Vector2(28.5, 30.5)
 
 [node name="RedBox" type="StaticBody2D"]
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_e3k1n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

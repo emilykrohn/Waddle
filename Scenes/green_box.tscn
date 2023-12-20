@@ -10,7 +10,7 @@ size = Vector2(16, 16)
 size = Vector2(28.5, 30.5)
 
 [node name="GreenBox" type="StaticBody2D"]
-scale = Vector2(2, 2)
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_yx7jp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
