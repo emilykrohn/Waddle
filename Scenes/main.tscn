@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=12 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
 [ext_resource type="Texture2D" uid="uid://fwhgkqwnd0t2" path="res://Art/Background/Snow.png" id="2_ldagl"]
 [ext_resource type="PackedScene" uid="uid://xum6wyd7p7pt" path="res://Scenes/player.tscn" id="3_60fi8"]
 [ext_resource type="Script" path="res://Scripts/PresentSpawnArea.gd" id="4_o324a"]
+[ext_resource type="PackedScene" uid="uid://b7d1jxnkxwflq" path="res://Scenes/red_box.tscn" id="5_n0tv0"]
+[ext_resource type="PackedScene" uid="uid://c6a8l0nnoaf5d" path="res://Scenes/green_box.tscn" id="6_jc0do"]
+[ext_resource type="PackedScene" uid="uid://b5f1d8ipr7cjh" path="res://Scenes/yellow_box.tscn" id="7_k461b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -80,5 +83,27 @@ script = ExtResource("4_o324a")
 
 [node name="Timer" type="Timer" parent="PresentSpawnArea"]
 autostart = true
+
+[node name="Boxes" type="Node" parent="."]
+
+[node name="RedBox" parent="Boxes" instance=ExtResource("5_n0tv0")]
+position = Vector2(30, 222)
+
+[node name="RedBox2" parent="Boxes" instance=ExtResource("5_n0tv0")]
+position = Vector2(224, 222)
+
+[node name="GreenBox" parent="Boxes" instance=ExtResource("6_jc0do")]
+position = Vector2(94, 222)
+
+[node name="GreenBox2" parent="Boxes" instance=ExtResource("6_jc0do")]
+position = Vector2(291, 222)
+
+[node name="YellowBox" parent="Boxes" instance=ExtResource("7_k461b")]
+position = Vector2(159, 222)
+scale = Vector2(2, 2)
+
+[node name="YellowBox2" parent="Boxes" instance=ExtResource("7_k461b")]
+position = Vector2(356, 222)
+scale = Vector2(2, 2)
 
 [connection signal="timeout" from="PresentSpawnArea/Timer" to="PresentSpawnArea" method="_on_timer_timeout"]
