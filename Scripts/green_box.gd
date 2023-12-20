@@ -3,8 +3,11 @@ extends StaticBody2D
 var in_range := false
 
 func _process(_delta):
-	if in_range and Input.is_action_just_pressed("ui_select"):
-		print("Test")
+	if in_range and Input.is_action_just_pressed("ui_select") and $%Player/Collect.collected:
+		if $%Player/Collect.color == "Green":
+			print("correct")
+		else:
+			print("wrong")
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":

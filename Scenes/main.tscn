@@ -75,6 +75,7 @@ position = Vector2(193, 132)
 zoom = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("3_60fi8")]
+unique_name_in_owner = true
 position = Vector2(150, 173)
 
 [node name="PresentSpawnArea" type="Path2D" parent="."]
