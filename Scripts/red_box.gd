@@ -5,7 +5,7 @@ var in_range := false
 func _process(_delta):
 	if in_range and Input.is_action_just_pressed("ui_select") and $%Player/Collect.collected:
 		if $%Player/Collect.color == "Red":
-			print("correct")
+			$%Player/Collect.collected = false
 		else:
 			print("wrong")
 
