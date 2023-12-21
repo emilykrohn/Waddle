@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfismb82mw3wy"]
+
+[ext_resource type="Texture2D" uid="uid://hci0iceilbkh" path="res://Art/Background/Sleigh.png" id="1_o1bvw"]
+[ext_resource type="Script" path="res://Scripts/sleigh.gd" id="2_mwoqg"]
+
+[node name="Sleigh" type="Sprite2D"]
+scale = Vector2(5, 5)
+texture = ExtResource("1_o1bvw")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+script = ExtResource("2_mwoqg")
