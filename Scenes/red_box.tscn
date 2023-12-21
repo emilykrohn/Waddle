@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ikpdjgatul6d" path="res://Art/Boxes/RedBox.png" id="1_vgaed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0k4d1"]
-size = Vector2(16, 16)
+size = Vector2(21.2, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x455"]
 size = Vector2(21.2, 30.5)
@@ -17,6 +17,8 @@ script = ExtResource("1_e3k1n")
 texture = ExtResource("1_vgaed")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.199999, 0)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0k4d1")
 
 [node name="Area2D" type="Area2D" parent="."]
