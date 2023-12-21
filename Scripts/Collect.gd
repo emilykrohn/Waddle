@@ -2,6 +2,7 @@ extends Node
 
 var color = "none"
 var collected := false
+var presents_collected := 0
 
 func _on_area_2d_area_entered(area):
 	if not collected:
