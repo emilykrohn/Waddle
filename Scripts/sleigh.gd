@@ -9,3 +9,4 @@ func _process(_delta):
 		region_rect = Rect2(96,0,32,32)
 	if $%Player/Collect.presents_collected == 16:
 		region_rect = Rect2(128,0,32,32)
+		
