@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=24 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ajs7b"]
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
@@ -14,6 +14,9 @@
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="11_hkwhu"]
 [ext_resource type="AudioStream" uid="uid://dn88jrwqruh7" path="res://Sounds/Ludum Dare 38 - Track 1.wav" id="12_aecek"]
 [ext_resource type="AudioStream" uid="uid://dtk1x526ar4tp" path="res://Sounds/Retro8.mp3" id="14_sxdix"]
+[ext_resource type="AudioStream" uid="uid://dkxkfs3t33ss4" path="res://Sounds/Fruit collect 1.wav" id="15_ifvta"]
+[ext_resource type="AudioStream" uid="uid://84j83iue72hw" path="res://Sounds/Confirm 1.wav" id="16_ryary"]
+[ext_resource type="AudioStream" uid="uid://cpoixp05v6btq" path="res://Sounds/Hit damage 1.wav" id="17_s6c8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -119,6 +122,7 @@ position = Vector2(284, 574)
 scale = Vector2(4, 4)
 
 [node name="WinScreen" type="Control" parent="World"]
+visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
@@ -223,6 +227,15 @@ autoplay = true
 [node name="ButtonSound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("14_sxdix")
+
+[node name="CollectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_ifvta")
+
+[node name="CorrectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_ryary")
+
+[node name="WrongSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_s6c8w")
 
 [connection signal="timeout" from="World/PresentSpawnArea/Timer" to="World/PresentSpawnArea" method="_on_timer_timeout"]
 [connection signal="pressed" from="World/WinScreen/Button" to="World/WinScreen" method="_on_button_pressed"]

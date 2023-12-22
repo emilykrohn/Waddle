@@ -7,8 +7,9 @@ func _process(_delta):
 		if $%Player/Collect.color == "Green":
 			$%Player/Collect.collected = false
 			$%Player/Collect.presents_collected += 1
+			$"../../../CorrectSound".play()
 		else:
-			print("wrong")
+			$"../../../WrongSound".play()
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
