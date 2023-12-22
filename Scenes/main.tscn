@@ -233,9 +233,11 @@ stream = ExtResource("15_ifvta")
 
 [node name="CorrectSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_ryary")
+volume_db = 5.0
 
 [node name="WrongSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_s6c8w")
+volume_db = 5.0
 
 [connection signal="timeout" from="World/PresentSpawnArea/Timer" to="World/PresentSpawnArea" method="_on_timer_timeout"]
 [connection signal="pressed" from="World/WinScreen/Button" to="World/WinScreen" method="_on_button_pressed"]
