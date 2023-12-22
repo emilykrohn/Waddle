@@ -8,7 +8,7 @@
 size = Vector2(20, 19)
 
 [node name="YellowPresent" type="Area2D"]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 script = ExtResource("1_aut3k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

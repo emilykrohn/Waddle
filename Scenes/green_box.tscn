@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Scripts/green_box.gd" id="1_yx7jp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0k4d1"]
-size = Vector2(16, 16)
+size = Vector2(20.8, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x455"]
-size = Vector2(28.5, 30.5)
+size = Vector2(20.8, 30.5)
 
 [node name="GreenBox" type="StaticBody2D"]
 scale = Vector2(2.5, 2.5)
@@ -17,12 +17,15 @@ script = ExtResource("1_yx7jp")
 texture = ExtResource("1_lxvkc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0k4d1")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.25, -0.25)
+position = Vector2(5.72204e-07, -0.25)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7x455")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
