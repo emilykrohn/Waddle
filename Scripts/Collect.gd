@@ -10,3 +10,6 @@ func _on_area_2d_area_entered(area):
 			color = area.COLOR
 			collected = true
 			area.queue_free()
+			if presents_collected == 16:
+				get_parent().player_won = true
+
