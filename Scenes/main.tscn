@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=18 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
 [ext_resource type="Texture2D" uid="uid://fwhgkqwnd0t2" path="res://Art/Background/Snow.png" id="2_ldagl"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b5f1d8ipr7cjh" path="res://Scenes/yellow_box.tscn" id="7_k461b"]
 [ext_resource type="PackedScene" uid="uid://cfismb82mw3wy" path="res://Scenes/sleigh.tscn" id="8_vwraa"]
 [ext_resource type="Script" path="res://Scripts/WinScreen.gd" id="9_nwwxd"]
+[ext_resource type="PackedScene" uid="uid://d0nophbuddjgi" path="res://Scenes/title_screen.tscn" id="10_hwps3"]
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="11_hkwhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -65,44 +67,54 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mltq7"]
+texture = ExtResource("1_eugpk")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2wxk4"]
+sources/0 = SubResource("TileSetAtlasSource_mltq7")
+
 [node name="main" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="World" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="TileMap" type="TileMap" parent="World"]
 scale = Vector2(2.5, 2.5)
 tile_set = SubResource("TileSet_jee3p")
 format = 2
 layer_0/tile_data = PackedInt32Array(983048, 131074, 2, 655368, 131074, 0, 720904, 131074, 1, 786440, 131074, 1, 851976, 131074, 1, 917512, 131074, 1, 983041, 65538, 2, 983042, 65538, 2, 983043, 65538, 2, 983044, 65538, 2, 983045, 65538, 2, 983046, 65538, 2, 983047, 65538, 2, 983040, 2, 2, 655360, 2, 0, 655361, 65538, 0, 655362, 65538, 0, 655363, 65538, 0, 655364, 65538, 0, 655365, 65538, 0, 655366, 65538, 0, 655367, 65538, 0, 720896, 2, 1, 786432, 2, 1, 851968, 2, 1, 917504, 2, 1, 720897, 65538, 1, 786433, 65538, 1, 851969, 65538, 1, 917505, 65538, 1, 720898, 65538, 1, 786434, 65538, 1, 851970, 65538, 1, 917506, 65538, 1, 720899, 65538, 1, 786435, 65538, 1, 851971, 65538, 1, 917507, 65538, 1, 720900, 65538, 1, 786436, 65538, 1, 851972, 65538, 1, 917508, 65538, 1, 720901, 65538, 1, 786437, 65538, 1, 851973, 65538, 1, 917509, 65538, 1, 720902, 65538, 1, 786438, 65538, 1, 851974, 65538, 1, 917510, 65538, 1, 720903, 65538, 1, 786439, 65538, 1, 851975, 65538, 1, 917511, 65538, 1, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 8, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0)
 
-[node name="Sleigh" parent="." instance=ExtResource("8_vwraa")]
+[node name="Sleigh" parent="World" instance=ExtResource("8_vwraa")]
 position = Vector2(272, 337)
 
-[node name="Player" parent="." instance=ExtResource("3_60fi8")]
+[node name="Player" parent="World" instance=ExtResource("3_60fi8")]
 unique_name_in_owner = true
 position = Vector2(179, 475)
 
-[node name="PresentSpawnArea" type="Path2D" parent="."]
+[node name="PresentSpawnArea" type="Path2D" parent="World"]
 curve = SubResource("Curve2D_akuln")
 script = ExtResource("4_o324a")
 
-[node name="Timer" type="Timer" parent="PresentSpawnArea"]
+[node name="Timer" type="Timer" parent="World/PresentSpawnArea"]
 wait_time = 2.0
 autostart = true
 
-[node name="Boxes" type="Node" parent="."]
+[node name="Boxes" type="Node" parent="World"]
 
-[node name="RedBox" parent="Boxes" instance=ExtResource("5_n0tv0")]
+[node name="RedBox" parent="World/Boxes" instance=ExtResource("5_n0tv0")]
 position = Vector2(81, 574)
 scale = Vector2(4, 4)
 
-[node name="GreenBox" parent="Boxes" instance=ExtResource("6_jc0do")]
+[node name="GreenBox" parent="World/Boxes" instance=ExtResource("6_jc0do")]
 position = Vector2(183, 573)
 scale = Vector2(4, 4)
 
-[node name="YellowBox" parent="Boxes" instance=ExtResource("7_k461b")]
+[node name="YellowBox" parent="World/Boxes" instance=ExtResource("7_k461b")]
 position = Vector2(284, 574)
 scale = Vector2(4, 4)
 
-[node name="WinScreen" type="Control" parent="."]
+[node name="WinScreen" type="Control" parent="World"]
 visible = false
 z_index = 1
 layout_mode = 3
@@ -111,12 +123,12 @@ offset_right = 360.0
 offset_bottom = 639.0
 script = ExtResource("9_nwwxd")
 
-[node name="Panel" type="Panel" parent="WinScreen"]
+[node name="Panel" type="Panel" parent="World/WinScreen"]
 layout_mode = 0
 offset_right = 360.0
 offset_bottom = 641.0
 
-[node name="Label" type="Label" parent="WinScreen"]
+[node name="Label" type="Label" parent="World/WinScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -132,7 +144,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "You Win!"
 
-[node name="Button" type="Button" parent="WinScreen"]
+[node name="Button" type="Button" parent="World/WinScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -148,5 +160,56 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Play Again"
 
-[connection signal="timeout" from="PresentSpawnArea/Timer" to="PresentSpawnArea" method="_on_timer_timeout"]
-[connection signal="pressed" from="WinScreen/Button" to="WinScreen" method="_on_button_pressed"]
+[node name="TitleScreen" parent="." instance=ExtResource("10_hwps3")]
+unique_name_in_owner = true
+z_index = 2
+script = ExtResource("11_hkwhu")
+
+[node name="TileMap2" type="TileMap" parent="TitleScreen"]
+scale = Vector2(2.5, 2.5)
+tile_set = SubResource("TileSet_2wxk4")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 720897, 0, 0, 786433, 0, 0, 851969, 0, 0, 917505, 0, 0, 983041, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 720898, 0, 0, 786434, 0, 0, 851970, 0, 0, 917506, 0, 0, 983042, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 720899, 0, 0, 786435, 0, 0, 851971, 0, 0, 917507, 0, 0, 983043, 0, 0, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 720900, 0, 0, 786436, 0, 0, 851972, 0, 0, 917508, 0, 0, 983044, 0, 0, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 720901, 0, 0, 786437, 0, 0, 851973, 0, 0, 917509, 0, 0, 983045, 0, 0, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 720902, 0, 0, 786438, 0, 0, 851974, 0, 0, 917510, 0, 0, 983046, 0, 0, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 851975, 0, 0, 917511, 0, 0, 983047, 0, 0, 8, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 851976, 0, 0, 917512, 0, 0, 983048, 0, 0)
+
+[node name="Control" type="Control" parent="TitleScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 359.0
+offset_bottom = 638.0
+
+[node name="Label" type="Label" parent="TitleScreen/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -113.0
+offset_right = 72.5
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Waddle"
+
+[node name="Button" type="Button" parent="TitleScreen/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_right = 23.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[connection signal="timeout" from="World/PresentSpawnArea/Timer" to="World/PresentSpawnArea" method="_on_timer_timeout"]
+[connection signal="pressed" from="World/WinScreen/Button" to="World/WinScreen" method="_on_button_pressed"]
+[connection signal="pressed" from="TitleScreen/Control/Button" to="World/Player" method="_on_button_pressed"]
+[connection signal="pressed" from="TitleScreen/Control/Button" to="TitleScreen" method="_on_button_pressed"]
