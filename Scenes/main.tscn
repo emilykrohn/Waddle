@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=25 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ajs7b"]
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dkxkfs3t33ss4" path="res://Sounds/Fruit collect 1.wav" id="15_ifvta"]
 [ext_resource type="AudioStream" uid="uid://84j83iue72hw" path="res://Sounds/Confirm 1.wav" id="16_ryary"]
 [ext_resource type="AudioStream" uid="uid://cpoixp05v6btq" path="res://Sounds/Hit damage 1.wav" id="17_s6c8w"]
+[ext_resource type="AudioStream" uid="uid://duqcg88rtrnl" path="res://Sounds/GRASS - Walk short 1.wav" id="18_1kgrf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -240,9 +241,13 @@ volume_db = 5.0
 stream = ExtResource("17_s6c8w")
 volume_db = 5.0
 
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_1kgrf")
+
 [connection signal="timeout" from="World/PresentSpawnArea/Timer" to="World/PresentSpawnArea" method="_on_timer_timeout"]
 [connection signal="pressed" from="World/WinScreen/Button" to="World/WinScreen" method="_on_button_pressed"]
 [connection signal="timeout" from="World/WinScreen/Timer" to="World/WinScreen" method="_on_timer_timeout"]
 [connection signal="pressed" from="TitleScreen/Control/Button" to="World/Player" method="_on_button_pressed"]
 [connection signal="pressed" from="TitleScreen/Control/Button" to="TitleScreen" method="_on_button_pressed"]
 [connection signal="finished" from="BackgroundMusic" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="finished" from="WalkSound" to="World/Player" method="_on_walk_sound_finished"]
