@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=21 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_ajs7b"]
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d0nophbuddjgi" path="res://Scenes/title_screen.tscn" id="10_hwps3"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="11_hkwhu"]
 [ext_resource type="AudioStream" uid="uid://dn88jrwqruh7" path="res://Sounds/Ludum Dare 38 - Track 1.wav" id="12_aecek"]
+[ext_resource type="AudioStream" uid="uid://dtk1x526ar4tp" path="res://Sounds/Retro8.mp3" id="14_sxdix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -118,7 +119,6 @@ position = Vector2(284, 574)
 scale = Vector2(4, 4)
 
 [node name="WinScreen" type="Control" parent="World"]
-visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
@@ -162,6 +162,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Play Again"
+
+[node name="Timer" type="Timer" parent="World/WinScreen"]
+wait_time = 0.2
 
 [node name="TitleScreen" parent="." instance=ExtResource("10_hwps3")]
 unique_name_in_owner = true
@@ -212,12 +215,18 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_aecek")
+volume_db = -6.559
 autoplay = true
+
+[node name="ButtonSound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("14_sxdix")
 
 [connection signal="timeout" from="World/PresentSpawnArea/Timer" to="World/PresentSpawnArea" method="_on_timer_timeout"]
 [connection signal="pressed" from="World/WinScreen/Button" to="World/WinScreen" method="_on_button_pressed"]
+[connection signal="timeout" from="World/WinScreen/Timer" to="World/WinScreen" method="_on_timer_timeout"]
 [connection signal="pressed" from="TitleScreen/Control/Button" to="World/Player" method="_on_button_pressed"]
 [connection signal="pressed" from="TitleScreen/Control/Button" to="TitleScreen" method="_on_button_pressed"]
-[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="finished" from="BackgroundMusic" to="." method="_on_audio_stream_player_2d_finished"]
