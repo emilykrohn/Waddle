@@ -101,4 +101,49 @@ scale = Vector2(4, 4)
 position = Vector2(284, 574)
 scale = Vector2(4, 4)
 
+[node name="WinScreen" type="Control" parent="."]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 639.0
+
+[node name="Panel" type="Panel" parent="WinScreen"]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 641.0
+
+[node name="Label" type="Label" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -13.0
+offset_right = 34.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "You Win!"
+
+[node name="Button" type="Button" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = 33.5
+offset_right = 91.5
+offset_bottom = 95.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Play Again"
+
 [connection signal="timeout" from="PresentSpawnArea/Timer" to="PresentSpawnArea" method="_on_timer_timeout"]
