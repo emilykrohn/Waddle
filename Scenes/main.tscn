@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkrbp0p2aas26"]
+[gd_scene load_steps=14 format=3 uid="uid://bkrbp0p2aas26"]
 
 [ext_resource type="Texture2D" uid="uid://dobi8qq8uc3d4" path="res://Art/Background/Sky.png" id="1_eugpk"]
 [ext_resource type="Texture2D" uid="uid://fwhgkqwnd0t2" path="res://Art/Background/Snow.png" id="2_ldagl"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6a8l0nnoaf5d" path="res://Scenes/green_box.tscn" id="6_jc0do"]
 [ext_resource type="PackedScene" uid="uid://b5f1d8ipr7cjh" path="res://Scenes/yellow_box.tscn" id="7_k461b"]
 [ext_resource type="PackedScene" uid="uid://cfismb82mw3wy" path="res://Scenes/sleigh.tscn" id="8_vwraa"]
+[ext_resource type="Script" path="res://Scripts/WinScreen.gd" id="9_nwwxd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i55v1"]
 texture = ExtResource("1_eugpk")
@@ -108,6 +109,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 360.0
 offset_bottom = 639.0
+script = ExtResource("9_nwwxd")
 
 [node name="Panel" type="Panel" parent="WinScreen"]
 layout_mode = 0
@@ -147,3 +149,4 @@ theme_override_font_sizes/font_size = 30
 text = "Play Again"
 
 [connection signal="timeout" from="PresentSpawnArea/Timer" to="PresentSpawnArea" method="_on_timer_timeout"]
+[connection signal="pressed" from="WinScreen/Button" to="WinScreen" method="_on_button_pressed"]
